@@ -14,7 +14,7 @@ beforeEach(() => {
   customer = new Customer("Asis", 4, 3);
 });
 
-describe("Customer", () => {
+describe("new Customer('Asis', 4, 3)", () => {
   it("is a subclass of Person", () => {
     expect(customer instanceof Person).toBe(true);
   });
