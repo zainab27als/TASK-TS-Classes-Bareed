@@ -6,20 +6,20 @@
  *
  ***************************/
 
-import { Vendor, Customer, Person, Point, Wallet } from "../bareed";
+import { Customer, Person, Point, Vendor, Wallet } from "../bareed";
 
-let customer;
+let customer: Customer;
 
 beforeEach(() => {
   customer = new Customer("Asis", 4, 3);
 });
 
-describe("new Customer('Aziz', 4, 3)", () => {
-  test("is a subclass of Person", () => {
+describe("Customer", () => {
+  it("is a subclass of Person", () => {
     expect(customer instanceof Person).toBe(true);
   });
 
-  test("inherits name, location and wallet from Person", () => {
+  it("inherits name, location and wallet from Person", () => {
     let expectedLocation = new Point(4, 3);
     expect(customer.name).toBe("Asis");
     expect(customer.location.equals(expectedLocation)).toBe(true);
@@ -27,11 +27,11 @@ describe("new Customer('Aziz', 4, 3)", () => {
     expect(customer.wallet instanceof Wallet).toBe(true);
   });
 
-  test("has 10 in the wallet by default", () => {
+  it("has 10 in the wallet by default", () => {
     expect(customer.wallet.money).toBe(10);
   });
 
-  test("inherits the moveTo method from Person", () => {
+  it("inherits the moveTo method from Person", () => {
     let newPoint = new Point(12, 13);
     customer.moveTo(newPoint);
     let newLocation = customer.location;
@@ -87,7 +87,7 @@ describe("new Customer('Aziz', 4, 3)", () => {
   });
 
   describe("has a requestIceCream(vendor, numberofIceCreams) method which", () => {
-    test("does NOT work if customer is out of range", () => {
+    it("does NOT work if customer is out of range", () => {
       let vendor = new Vendor("Hamsa", 1000, 1000);
       let originalLocation = new Point(1000, 1000);
       customer.requestIceCream(vendor, 1);
@@ -97,7 +97,7 @@ describe("new Customer('Aziz', 4, 3)", () => {
       expect(customer.wallet.money).toBe(10);
     });
 
-    test("does NOT work if customer doesn't have enough money", () => {
+    it("does NOT work if customer doesn't have enough money", () => {
       let vendor = new Vendor("Hamsa", 1000, 1000);
       let originalLocation = new Point(1000, 1000);
       customer.wallet.money = 0;
@@ -108,7 +108,7 @@ describe("new Customer('Aziz', 4, 3)", () => {
       expect(customer.wallet.money).toBe(0);
     });
 
-    test("works if the customer has enough money and is in range of the vendor", () => {
+    it("works if the customer has enough money and is in range of the vendor", () => {
       let vendor = new Vendor("Hamsa", 4, 3);
 
       let newPrice = Math.floor(Math.random() * 100);

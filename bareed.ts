@@ -10,24 +10,29 @@
  * let point = new Point(x, y);
  ****************************************************************/
 class Point {
-  constructor(x, y) {
+  x: number;
+  y: number;
+
+  constructor(x: number, y: number) {
     this.x = x;
     this.y = y;
   }
 
-  distanceTo = point => {
+  distanceTo(point: Point) {
     let xDelta = this.x - point.x;
     let yDelta = this.y - point.y;
     return Math.sqrt(xDelta * xDelta + yDelta * yDelta); // PYTHAGORAS!
-  };
+  }
 
-  equals = point => point.x === this.x && point.y === this.y;
+  equals(point: Point) {
+    point.x === this.x && point.y === this.y;
+  }
 
-  static randomPoint = (maxX, maxY) => {
-    let x = Math.random() * (maxX || 100);
-    let y = Math.random() * (maxY || 100);
+  static randomPoint(maxX = 100, maxY = 100) {
+    let x = Math.random() * maxX;
+    let y = Math.random() * maxY;
     return new Point(x, y);
-  };
+  }
 }
 
 /**********************************************************
@@ -45,9 +50,9 @@ class Wallet {
   // implement Wallet!
   constructor(money = 0) {}
 
-  credit = amount => {};
+  credit = (amount: number) => {};
 
-  debit = amount => {};
+  debit = (amount: number) => {};
 }
 
 /**********************************************************

@@ -8,7 +8,7 @@
 
 import { Person, Point, Wallet } from "../bareed";
 
-let person;
+let person: Person;
 
 beforeEach(() => {
   person = new Person("Asis", 4, 3);

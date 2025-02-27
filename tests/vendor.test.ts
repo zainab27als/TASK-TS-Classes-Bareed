@@ -6,9 +6,9 @@
  *
  ***************************/
 
-import { Vendor, Customer, Person, Point, Wallet } from "../bareed";
+import { Customer, Person, Point, Vendor, Wallet } from "../bareed";
 
-let vendor;
+let vendor: Vendor;
 
 beforeEach(() => {
   vendor = new Vendor("Asis", 4, 3);

@@ -8,7 +8,7 @@
 
 import { Point } from "../bareed";
 
-let point;
+let point: Point;
 
 beforeEach(() => {
   point = new Point(4, 3);

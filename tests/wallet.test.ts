@@ -8,7 +8,7 @@
 
 import { Wallet } from "../bareed";
 
-let wallet;
+let wallet: Wallet;
 
 beforeEach(() => {
   wallet = new Wallet(10);
