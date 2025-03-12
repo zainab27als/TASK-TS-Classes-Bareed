@@ -25,7 +25,7 @@ class Point {
   }
 
   equals(point: Point) {
-    point.x === this.x && point.y === this.y;
+    return point.x === this.x && point.y === this.y;
   }
 
   static randomPoint(maxX = 100, maxY = 100) {
