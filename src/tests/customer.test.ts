@@ -54,9 +54,9 @@ describe("Customer", () => {
         "Is customer at %O in range of vendor at %O with range of %f?",
         (customerLocation, vendorLocation, range, isInRange) => {
           let vendor = new Vendor("Hamsa", 0, 0);
-          vendor.range = range;
-          vendor.location = vendorLocation;
-          customer.location = customerLocation;
+          vendor.range = range as number;
+          vendor.location = vendorLocation as Point;
+          customer.location = customerLocation as Point;
           expect(customer._isInRange(vendor)).toBe(isInRange);
         }
       );
