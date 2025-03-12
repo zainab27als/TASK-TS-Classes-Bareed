@@ -80,7 +80,7 @@ describe("Customer", () => {
           let vendor = new Vendor("Hamsa", 0, 0);
           vendor.price = price as number;
           customer.wallet.money = money as number;
-          expect(customer._haveEnoughMoney(vendor, numberOfIceCreams)).toBe(
+          expect(customer._haveEnoughMoney(vendor, numberOfIceCreams as number)).toBe(
             hasEnoughMoney
           );
         }
