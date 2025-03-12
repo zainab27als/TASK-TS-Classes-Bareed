@@ -78,8 +78,8 @@ describe("Customer", () => {
         "Can customer with %f money buy %i ice creams at %i each?",
         (money, numberOfIceCreams, price, hasEnoughMoney) => {
           let vendor = new Vendor("Hamsa", 0, 0);
-          vendor.price = price;
-          customer.wallet.money = money;
+          vendor.price = price as number;
+          customer.wallet.money = money as number;
           expect(customer._haveEnoughMoney(vendor, numberOfIceCreams)).toBe(
             hasEnoughMoney
           );
